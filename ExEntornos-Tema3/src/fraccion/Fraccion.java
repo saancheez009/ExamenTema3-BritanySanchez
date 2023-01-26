@@ -1,15 +1,28 @@
 package fraccion;
 
-// Clase que define una fracción
+// Esta es la clase que define una fracción
+/**
+ * 
+ * @author bsanchez
+ *
+ */
 public class Fraccion {
-	// Numerador
+	// Esta variable es el Numerador
+	/**
+	 * 
+	 */
 	private int num;
 
-	// Denominador
+	// Esta variable es el Denominador
+	/**
+	 * 
+	 */
 	private int den;
 
 	// Constructor por defecto
-
+/**
+ * 
+ */
 	public Fraccion() { // debe generar el valor neutro que es 0/1
 		num = 0;
 		den = 1;
@@ -17,6 +30,11 @@ public class Fraccion {
 	}
 
 	// Constructor con parámetros
+	/**
+	 * 
+	 * @param num
+	 * @param den
+	 */
 	public Fraccion(int num, int den) {
 		// debo evitar crear fracciones con 0 en el divisor
 		this.num = num;
@@ -29,32 +47,55 @@ public class Fraccion {
 	}
 
 	// Constructor copia
+	/**
+	 * 
+	 * @param f
+	 */
 	public Fraccion(final Fraccion f) {
 		num = f.num;
 		den = f.den;
 	}
 
 	// getters y setters
-
+/**
+ * 
+ * @param num
+ */
 	public void setNum(int num) {
 		this.num = num;
 
 	}
-
+	//n se devuelve el numerador
+/**
+ * 
+ * @return
+ */
 	public int getNum() {
 		return num;
 
 	}
-
+	//Se devulve el denominador
+/**
+ * 
+ * @param den
+ */
 	public void setDen(int den) {
 		this.den = den;
 	}
-
+/**
+ * 
+ * @return
+ */
 	public int getDen() {
 		return den;
 	}
 
 	// Cálculo del máximo común divisor por el algoritmo de Euclides
+	
+	/**
+	 * 
+	 * @return
+	 */
 	private int mcd() {
 		int u = (Math.abs(num)); // valor absoluto del numerador
 		int v = (Math.abs(den)); // valor absoluto del denominador
@@ -71,6 +112,9 @@ public class Fraccion {
 	}
 
 	// método para simplificar fracciones
+	/**
+	 * 
+	 */
 	public void simplificar() {
 		int n = mcd();
 		num = num / n;
@@ -78,14 +122,21 @@ public class Fraccion {
 	}
 
 	// Método toString
-
+/**
+ * 
+ */
 	public String toString() {
 		String mensaje = num + "/" + den;
 		return mensaje;
 
 	}
 
-	// suma de fracciones
+	//Se suman las fracciones
+	/**
+	 * 
+	 * @param f
+	 * @return
+	 */
 	public Fraccion sumar(Fraccion f) {
 		Fraccion aux = new Fraccion();
 		aux.num = num * f.den + den * f.num;
@@ -95,8 +146,13 @@ public class Fraccion {
 
 	}
 
-	// Restar fracciones
+	// Se restan las fracciones
 
+	/**
+	 * 
+	 * @param f
+	 * @return
+	 */
 	public Fraccion restar(Fraccion f) {
 		Fraccion aux = new Fraccion();
 		aux.num = num * f.den - den * f.num;
@@ -108,6 +164,11 @@ public class Fraccion {
 
 //Multiplicar fracciones
 
+	/**
+	 * 
+	 * @param f
+	 * @return
+	 */
 	public Fraccion multiplicar(Fraccion f) {
 		Fraccion aux = new Fraccion();
 		aux.num = num * f.num;
@@ -119,6 +180,11 @@ public class Fraccion {
 
 //Dividir fracciones
 
+	/**
+	 * 
+	 * @param f
+	 * @return
+	 */
 	public Fraccion dividir(Fraccion f) {
 		Fraccion aux = new Fraccion();
 		aux.num = num * f.den;
